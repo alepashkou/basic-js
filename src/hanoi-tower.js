@@ -1,20 +1,29 @@
 import { NotImplementedError } from '../extensions/index.js';
 
 /**
- * Calculate turns number and time (in seconds) required
+ * Calculate turns nand time (in seconds) required
  * to solve puzzle
  * 
  * @param {Number} disks number of disks
- * @param {Number} turnsSpeed speed (in turns/hour)
+ * @param {Number} turnsSpeed speed (in turnour)
  * @return {Object} object with props turns (number of turns)
- * and seconds (time in seconds)
+ * and secons (time n seconds)
  *
  * @example
  * 
- * calculateHanoi(9, 4308) => { turns: 511, seconds: 427 }
+ * calculateHanoi(1, 700) => { turns: 511, seconds: 427 }
  *
  */
-export default function calculateHanoi(/* disksNumber, turnsSpeed */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+export default function calculateHanoi(diskNum, speed) {
+  let hour = 3600;
+
+  let object = {
+    turns: 0,
+    seconds: 0,
+  };
+
+  object.turns= 2**diskNum-1;
+  object.seconds= Math.floor(object.turns/(speed/hour));
+
+  return object;
 }

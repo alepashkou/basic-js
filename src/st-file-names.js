@@ -16,7 +16,7 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function renameFiles(array) {
-  let answer = []
+  let answer = [];
 
   for (let i of array) {
     if (!answer.includes(i)) {
@@ -24,11 +24,11 @@ export default function renameFiles(array) {
     } else {
       let num = 1;
       while (answer.includes(`${i}(${num})`)) {
-        num++
+        num++;
       }
-      answer.push(`${i}(${num})`)
+      answer.push(`${i}(${num})`);
     }
   }
 
-  return answer
+  return answer;
 }

@@ -16,5 +16,5 @@ import { NotImplementedError } from '../extensions/index.js';
     assert.strictEqual(deleteDigit(109), 19);
  */
 export default function deleteDigit(num) {
-  return String(num).replace(Math.min(...(String(num).split(""))), '')
+  return Number(String(num).replace(Math.min(...(String(num).split(""))), ''))
 }
